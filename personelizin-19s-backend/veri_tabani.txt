@@ -1,0 +1,3 @@
+Kullanıcılar: id, name, email, role (Admin/User), managerId.
+
+İzinler: id, userId, startDate, endDate, status (Pending/Approved/Rejected), description.

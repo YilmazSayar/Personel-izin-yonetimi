@@ -1,0 +1,3 @@
+Bu klasöre tanıtım videonuzu "tanitim.mp4" adıyla koyun.
+Ana sayfada video otomatik oynatılır (sessiz, döngüde).
+Video yoksa veya yüklenemezse statik kart gösterilir.

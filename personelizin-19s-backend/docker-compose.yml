@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: personel_izin_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: personeldb
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql # '/data' ekini kaldırdık
+
+  api:
+    build:
+      context: .
+      dockerfile: personelizin-backend/Dockerfile
+    container_name: personelizin-backend-api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=personeldb;Username=postgres;Password=kartal03
+      - Jwt__Key=Bu_Key_Cok_Gizli_Ve_Uzun_Olmali_123456_Net10
+    ports:
+      - "5000:8080"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
