@@ -9,7 +9,7 @@ namespace personelizin_backend.Data
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
         
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=personeldb;Username=postgres;Password=kartal03");
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=personeldb;Username=postgres;Password=REPLACE_WITH_YOUR_DB_PASSWORD");
 
             return new AppDbContext(optionsBuilder.Options);
         }

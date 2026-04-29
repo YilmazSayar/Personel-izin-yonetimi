@@ -4,7 +4,7 @@ services:
     container_name: personel_izin_db
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123
+      POSTGRES_PASSWORD: REPLACE_WITH_YOUR_POSTGRES_PASSWORD
       POSTGRES_DB: personeldb
     ports:
       - "5433:5432"
@@ -18,8 +18,8 @@ services:
     container_name: personelizin-backend-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=personeldb;Username=postgres;Password=kartal03
-      - Jwt__Key=Bu_Key_Cok_Gizli_Ve_Uzun_Olmali_123456_Net10
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=personeldb;Username=postgres;Password=REPLACE_WITH_YOUR_DB_PASSWORD
+      - Jwt__Key=REPLACE_WITH_YOUR_JWT_KEY
     ports:
       - "5000:8080"
     depends_on:
